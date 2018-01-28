@@ -40,12 +40,15 @@
 	var wordChange = function(){
 		if (!paused){
 			i += 1;
+			if (i < 0){
+				i = 0;
+			}
 			var cur = words[i%words.length];
 			el.setAttribute('text',{value: cur});
 			setTimeout(wordChange, delay/2+(delay/6)*cur.length);
 		}
 	}
-	setTimeout(wordChange,3500);
+	setTimeout(wordChange,3000);
 
   </script>
 </html>
