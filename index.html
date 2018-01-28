@@ -3,28 +3,16 @@
     <script src="https://aframe.io/releases/0.7.0/aframe.min.js"></script>
     <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
   </head>
-  <!--
   <body>
-    <a-scene embedded arjs> 
+    <a-scene embedded arjs>
 
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#5BA884"></a-plane>
       <a-entity id="word" position="0 2.75 -6"
                 text="width: 30; align: center; lineHeight: 150; letterSpacing: 2; color: #FFEE00; value: fill">
       </a-entity>
-	  <a-sky>
-      <a-marker-camera preset='hiro'></a-marker-camera>
-    </a-sky>
-    </a-scene>
-  </body>-->
-  <body style='margin : 0px; overflow: hidden;'>
-  <a-scene embedded arjs>
-    <!-- create your content here. just a box for now -->
-    <a-box position='0 0 -10' material='opacity: 0.5;'></a-box>
-    <!-- define a camera which will move according to the marker position -->
-    <a-marker-camera preset='hiro'></a-marker-camera>
-  </a-scene>
-</body>
-<!--
+	    <a-camera></a-camera>
+
+  </body>
   <script>
 	words = ['This', 'is', 'a', 'tool', 'to', 'enhance', 'your', 'reading', 'speed', 'by', 'seperating', 'you', 'from', 'outside', 'influence.', 'By', 'being', 'given', 'only', 'a', 'single', 'word', 'you', 'are', 'forced', 'to', 'focus', 'and', 'read', 'at', 'a', 'faster', 'pace.']
 	i = -1
@@ -33,10 +21,10 @@
 		i += 1;
 		el.setAttribute('text',{value: words[i%words.length]})
 	}
-	
+
 	var t=setInterval(wordChange,1000);
 
   </script>
--->
+
 </html>
 

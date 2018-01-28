@@ -29,5 +29,6 @@ app.get('/', function (req, res) {
 var httpServer = http.createServer(app);
 var httpsServer = https.createServer(credentials, app);
 
+console.log("STARTING HTTPS ON PORT 8443");
 httpServer.listen(8080);
 httpsServer.listen(8443);
