@@ -7,11 +7,11 @@ content = read_file.readlines()
 content = [x.strip() for x in content]
 
 for line in content:
-    line = line.replace("'", "\\'")
-    line = line.replace('"', '\\"')
-    line = line.replace('`', "\\'")
+    line = line.replace('`', "\'")
     if len(line) > 1:
-        write_file.write(line + ",")
+        words = line.split()
+        for word in words:
+            write_file.write('"' + word + '",')
 
 write_file.write("];")
 
