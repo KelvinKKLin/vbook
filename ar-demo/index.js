@@ -1,13 +1,3 @@
-/*var express = require('express')
-var app = express()
- var path = require('path');
-
-app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/index.html'));
-})
-
-console.log("Listening on localhost:5000")
-app.listen(5000, "0.0.0.0")*/
 var express = require('express')
 var path = require('path');
 
@@ -24,6 +14,18 @@ var app = express();
 // your express configuration here
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
+})
+
+app.get('/scenic.html', function(req, res){
+    res.sendFile(path.join(__dirname + '/scenic.html'));
+})
+
+app.get('/blue.html', function(req, res){
+    res.sendFile(path.join(__dirname + '/blue.html'));
+})
+
+app.get('/ar.html', function(req, res){
+    res.sendFile(path.join(__dirname + '/ar.html'));
 })
 
 var httpServer = http.createServer(app);
