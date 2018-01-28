@@ -7,6 +7,7 @@ content = read_file.readlines()
 content = [x.strip() for x in content]
 
 for line in content:
+    line = line.replace('"', "\'")
     line = line.replace('`', "\'")
     if len(line) > 1:
         words = line.split()
