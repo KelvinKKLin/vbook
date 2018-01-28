@@ -6,10 +6,22 @@
     <a-scene stats> 
 
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#5BA884"></a-plane>
-      <a-entity position="0 1.5 -4"
-                text="width: 30; align: center; lineHeight: 150; letterSpacing: 2; color: #FFEE00; value: This is a word">
+      <a-entity id="word" position="0 2.75 -6"
+                text="width: 30; align: center; lineHeight: 150; letterSpacing: 2; color: #FFEE00; value: fill">
       </a-entity>
 	  <a-sky color="#7BC8A4"></a-sky>
     </a-scene>
   </body>
+  <script>
+	words = ['This', 'is', 'a', 'tool', 'to', 'enhance', 'your', 'reading', 'speed', 'by', 'seperating', 'you', 'from', 'outside', 'influence.', 'By', 'being', 'given', 'only', 'a', 'single', 'word', 'you', 'are', 'forced', 'to', 'focus', 'and', 'read', 'at', 'a', 'faster', 'pace.']
+	i = -1
+	var el = document.querySelector('#word');
+	var wordChange = function(){
+		i += 1;
+		el.setAttribute('text',{value: words[i%words.length]})
+	}
+	
+	var t=setInterval(wordChange,1000);
+
+  </script>
 </html>
